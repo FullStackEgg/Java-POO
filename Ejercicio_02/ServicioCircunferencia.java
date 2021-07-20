@@ -14,14 +14,12 @@ public class ServicioCircunferencia {
 	private Scanner leer = new Scanner(System.in).useDelimiter("\n");
 	
 	/**
-	 * Usuario ingrea el Radio
+	 * Usuario ingresa el Radio
 	 * @return objeto Radio
 	 */
 	public Circunferencia crearCircunferencia() {
-		
 		System.out.println("Ingresa el Radio de la Circunferencia:");
 		double radio = Double.parseDouble(leer.next());
-		
 		return new Circunferencia(radio);
 	}
 	
@@ -32,7 +30,6 @@ public class ServicioCircunferencia {
 	 */
 	public double calcularArea(double radio) {
 		double area = Math.PI * radio;
-		
 		return area;
 	}
 	
