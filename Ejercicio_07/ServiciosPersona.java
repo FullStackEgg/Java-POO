@@ -18,10 +18,10 @@ public class ServiciosPersona {
 	DecimalFormat formateador = new DecimalFormat("##.#");
 
 	/**
-	 * Metodo crearPersona(): el mÈtodo crear persona, le pide los valores de los
-	 * atributos al usuario y despuÈs se le asignan a sus respectivos atributos para
-	 * llenar el objeto Persona. Adem·s, comprueba que el sexo introducido sea
-	 * correcto, es decir, H, M o O. Si no es correcto se deber· mostrar un mensaje
+	 * Metodo crearPersona(): el m√©todo crear persona, le pide los valores de los
+	 * atributos al usuario y despu√©s se le asignan a sus respectivos atributos para
+	 * llenar el objeto Persona. Adem√°s, comprueba que el sexo introducido sea
+	 * correcto, es decir, H, M o O. Si no es correcto se deber√° mostrar un mensaje
 	 */
 	public void crearPersona(Persona p) {
 		System.out.println("=================================");
@@ -33,7 +33,7 @@ public class ServiciosPersona {
 		int edad = Integer.parseInt(leer.nextLine());
 		p.setEdad(edad);
 
-		//mientras que el sexo este vacio
+		// Validamos la opcion del sexo
 		do {
 			System.out.println("Ingresa  tu sexo: [H] para Hombre, [M] para Mujer, [O] para otro. ");
 			String sexo = leer.nextLine();
@@ -44,9 +44,9 @@ public class ServiciosPersona {
 				p.setSexo(sexo);
 			} else {
 				System.out.println("[ Sexo incorrecto ]");
-				p.setSexo("");
+				p.setSexo(""); // asiganos como vacio
 			}
-		} while (p.getSexo().equals(""));
+		} while (p.getSexo().equals("")); // mientras que el sexo este vacio se repite
 		
 		System.out.println("Ingresa tu peso: ");
 		int peso = Integer.parseInt(leer.nextLine());
@@ -62,12 +62,12 @@ public class ServiciosPersona {
 	}
 
 	/**
-	 * MÈtodo calcularIMC(): calculara si la persona est· en su peso ideal (peso en
-	 * kg/(altura^2 en mt2)). Si esta fÛrmula da por resultado un valor menor que
-	 * 20, la funciÛn devuelve un -1. Si la fÛrmula da por resultado un n˙mero entre
-	 * 20 y 25 (incluidos), significa que el peso est· por debajo de su peso ideal y
-	 * la funciÛn devuelve un 0. Finalmente, si el resultado de la fÛrmula es un
-	 * valor mayor que 25 significa que la persona tiene sobrepeso, y la funciÛn
+	 * M√©todo calcularIMC(): calculara si la persona est√° en su peso ideal (peso en
+	 * kg/(altura^2 en mt2)). Si esta f√≥rmula da por resultado un valor menor que
+	 * 20, la funci√≥n devuelve un -1. Si la f√≥rmula da por resultado un n√∫mero entre
+	 * 20 y 25 (incluidos), significa que el peso est√° por debajo de su peso ideal y
+	 * la funci√≥n devuelve un 0. Finalmente, si el resultado de la f√≥rmula es un
+	 * valor mayor que 25 significa que la persona tiene sobrepeso, y la funci√≥n
 	 * devuelve un 1. Se recomienda hacer uso de constantes para devolver estos
 	 * valores.
 	 * @param Object Persona p
@@ -98,7 +98,7 @@ public class ServiciosPersona {
 	}
 
 	/**
-	 * MÈtodo esMayorDeEdad(): indica si la persona es mayor de edad. La funciÛn
+	 * M√©todo esMayorDeEdad(): indica si la persona es mayor de edad. La funci√≥n
 	 * devuelve un booleano.
 	 * @param Object Persona p
 	 * @return boolean	
