@@ -44,7 +44,7 @@ public class ServiciosPersona {
 				p.setSexo(sexo);
 			} else {
 				System.out.println("[ Sexo incorrecto ]");
-				p.setSexo(""); // asiganos como vacio
+				p.setSexo(""); // asignamos como vacio
 			}
 		} while (p.getSexo().equals("")); // mientras que el sexo este vacio se repite
 		
