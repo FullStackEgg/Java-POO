@@ -1,12 +1,12 @@
 /*
-* Crear 4 objetos de tipo Persona con distintos valores, a continuaciÛn,
-* llamaremos todos los mÈtodos para cada objeto, deber· comprobar si la persona
-* est· en su peso ideal, tiene sobrepeso o est· por debajo de su peso ideal e
-* indicar para cada objeto si la persona es mayor de edad. Por ˙ltimo,
-* guardaremos los resultados de los mÈtodos calcularIMC y esMayorDeEdad en
-* distintas variables, para despuÈs en el main, calcular un porcentaje de esas
-* 4 personas cuantas est·n por debajo de su peso, cuantas en su peso ideal y
-* cuantos, por encima, y tambiÈn calcularemos un porcentaje de cuantos son
+* Crear 4 objetos de tipo Persona con distintos valores, a continuaci√≥n,
+* llamaremos todos los m√©todos para cada objeto, deber√° comprobar si la persona
+* est√° en su peso ideal, tiene sobrepeso o est√° por debajo de su peso ideal e
+* indicar para cada objeto si la persona es mayor de edad. Por √∫ltimo,
+* guardaremos los resultados de los m√©todos calcularIMC y esMayorDeEdad en
+* distintas variables, para despu√©s en el main, calcular un porcentaje de esas
+* 4 personas cuantas est√°n por debajo de su peso, cuantas en su peso ideal y
+* cuantos, por encima, y tambi√©n calcularemos un porcentaje de cuantos son
 * mayores de edad y cuantos menores.
 */
 package personaApp;
@@ -23,15 +23,16 @@ public class PersonaApp {
 
 	public static void main(String[] args) {
 
-		// intanciamos la clase para hace uso de los metodos
+		// intanciamos la clase ServiciosPersona para hacer uso de los metodos
 		ServiciosPersona s = new ServiciosPersona();
 		
-		// creamos los 4 Objetos de tipo persona
+		// instanciamos 4 Objetos de tipo persona
 		Persona p1 = new Persona();
 		Persona p2 = new Persona();
 		Persona p3 = new Persona();
 		Persona p4 = new Persona();
 		
+		// Damos valores a los objetos de tipo persona
 		s.crearPersona(p1);
 		s.crearPersona(p2);
 		s.crearPersona(p3);
