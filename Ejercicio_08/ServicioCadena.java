@@ -26,7 +26,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· contabilizar la cantidad de vocales que tiene
+	 * Deber√° contabilizar la cantidad de vocales que tiene
 	 * la frase ingresada.
 	 */
 	public void mostrarVocales(Cadena c) {
@@ -59,6 +59,7 @@ public class ServicioCadena {
 				break;
 
 			default:
+				System.out.println("La frase no contiene niguna vocal.");	
 				break;
 			}
 		}
@@ -72,7 +73,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· invertir la frase ingresada y mostrar la frase
+	 * Deber√° invertir la frase ingresada y mostrar la frase
 	 * invertida por pantalla.
 	 */
 	public String invertirFrase(Cadena c) {
@@ -86,8 +87,8 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· recibir por par·metro un car·cter
-	 * ingresado por el usuario y contabilizar cu·ntas veces se repite el car·cter
+	 * Deber√° recibir por par√°metro un car√°cter
+	 * ingresado por el usuario y contabilizar cu√°ntas veces se repite el car√°cter
 	 * en la frase.
 	 */
 	public void vecesRepetido(Cadena c, char letra) {
@@ -105,7 +106,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· comparar la longitud de la frase que compone la clase 
+	 * Deber√° comparar la longitud de la frase que compone la clase 
 	 * con otra nueva frase ingresada por el usuario.
 	 */
 	public void compararLongitud(Cadena c, String nuevaFrase) {
@@ -118,7 +119,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· unir la frase contenida en la clase
+	 * Deber√° unir la frase contenida en la clase
 	 * Cadena con una nueva frase ingresada por el usuario y mostrar la frase
 	 * resultante.
 	 */
@@ -128,8 +129,8 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber· reemplazar todas las letras ìaî que
-	 * se encuentren en la frase, por alg˙n otro car·cter seleccionado por el
+	 * Deber√° reemplazar todas las letras ‚Äúa‚Äù que
+	 * se encuentren en la frase, por alg√∫n otro car√°cter seleccionado por el
 	 * usuario y mostrar la frase resultante.
 	 */
 	public void reemplazar(Cadena c, String nuevaLetra) {
@@ -138,7 +139,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * MÈtodo contiene(String letra), deber· comprobar si la frase contiene una
+	 * M√©todo contiene(String letra), deber√° comprobar si la frase contiene una
 	 * letra que ingresa el usuario y devuelve verdadero si la contiene y falso si
 	 * no.
 	 */
