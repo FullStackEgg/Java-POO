@@ -11,13 +11,13 @@ import cadenApp.entidades.Cadena;
  */
 public class ServicioCadena {
 
-	private Scanner leer = new Scanner(System.in);
+	private Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
 	// Crea la cadena ingresada por el usuario
 	// y obtiene su longitud.
 	public void crearCadena(Cadena c) {
 		System.out.println("Ingresa una frase: ");
-		String frase = leer.nextLine();
+		String frase = leer.next();
 
 		int longitudFrase = frase.length();
 
@@ -76,11 +76,12 @@ public class ServicioCadena {
 	 * invertida por pantalla.
 	 */
 	public String invertirFrase(Cadena c) {
-		String frase = c.getFrase(); // Obtenemos la frase
 		String cadenaInvertida = "";
 
-		for (int i = frase.length() - 1; i >= 0; i--)
-			cadenaInvertida = cadenaInvertida + frase.charAt(i);
+		// Recorremos la frase desde el fin hasta el inicio de la cadena
+		//  y almacenamos caracter por caracter a la cadena invertida
+		for (int i = c.getFrase().length() - 1; i >= 0; i--)
+			cadenaInvertida = cadenaInvertida + c.getFrase().charAt(i);
 		return cadenaInvertida;
 	}
 
@@ -90,13 +91,12 @@ public class ServicioCadena {
 	 * en la frase.
 	 */
 	public void vecesRepetido(Cadena c, char letra) {
-		String frase = c.getFrase(); // Obtenemos la frase de la Cadena
 		int contador = 0;
 		
 		// Recorremosla frase en busca de la letra
-		for (int i = 0; i < frase.length(); i++) {
+		for (int i = 0; i < c.getFrase().length(); i++) {
 			// validamos coincidencias
-			if (frase.charAt(i)== letra) {
+			if (c.getFrase().charAt(i)== letra) {
 				contador++; 
 			}
 		}
@@ -109,11 +109,8 @@ public class ServicioCadena {
 	 * con otra nueva frase ingresada por el usuario.
 	 */
 	public void compararLongitud(Cadena c, String nuevaFrase) {
-		int longitud_frase = c.getLongitudFrase(); // obtenemos la longitud de la frase de la clase
-		int longitud_nuevaFrase = nuevaFrase.length();
-		
 		// comparamos las longitudes
-		if (longitud_frase == longitud_nuevaFrase) {
+		if (c.getLongitudFrase() == nuevaFrase.length() ) {
 			System.out.println("Las dos frases tienen la misma longitud.");
 		} else {
 			System.out.println("La longitud de las frases es distinta.");
@@ -126,22 +123,32 @@ public class ServicioCadena {
 	 * resultante.
 	 */
 	public void unirFrases(Cadena c, String nuevaFrase) {
-		String fraseCadena = c.getFrase(); // obtenemos la frase del obj Cadena
-		
-		String fraseConcatenada = fraseCadena.concat(nuevaFrase); // unimos las frases
-		
+		String fraseConcatenada = c.getFrase().concat(nuevaFrase); // unimos las frases
 		System.out.println("\nLa frase resultante es: [" + fraseConcatenada + "].");
 	}
 
 	/*
-	 * Método reemplazar(String letra), deberá reemplazar todas las letras “a” que
+	 * Deberá reemplazar todas las letras “a” que
 	 * se encuentren en la frase, por algún otro carácter seleccionado por el
 	 * usuario y mostrar la frase resultante.
 	 */
+	public void reemplazar(Cadena c, String nuevaLetra) {
+		String nuevaFrase = c.getFrase().replace("a", nuevaLetra); // reemplazamos el cracter a por el nuevo
+		System.out.println("La frase resultante con caracteres reemplazados es: [" + nuevaFrase + "].");
+	}
 
 	/*
 	 * Método contiene(String letra), deberá comprobar si la frase contiene una
 	 * letra que ingresa el usuario y devuelve verdadero si la contiene y falso si
 	 * no.
 	 */
+	public void contiene(Cadena c, String letra) {
+		// Validamos si contiene el caracter ingresado por el usuario
+		if (c.getFrase().contains(letra) == true) {
+			System.out.println("La frase contiene el caracter: [" + letra + "].");
+			System.out.println("Frase: [" + c.getFrase() + "].");
+		} else {
+			System.out.println("La frase no contiene el cracater ingresado.");
+		}
+	}
 }

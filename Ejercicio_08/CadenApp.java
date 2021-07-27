@@ -43,6 +43,17 @@ public class CadenApp {
 		
 		servicio.unirFrases(cadena01, nuevaFrase);
 		
+		System.out.println("\nIngrese el nuevo caracter con el que desea reemplazar las [a] en la frase: ");
+		String nuevaLetra = leer.next();
+		
+		servicio.reemplazar(cadena01, nuevaLetra);
+		
+		System.out.println("\nIngrese el caracter a buscar en la frase:");
+		String caracter = leer.next();
+		
+		servicio.contiene(cadena01, caracter);
+		
+		leer.close();
 	}
 
 }
