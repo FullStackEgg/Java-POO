@@ -17,7 +17,7 @@ public class ServicioPersona {
 	 * Este método rellena el objeto mediante un Scanner y le pregunta al usuario el
 	 * nombre y la fecha de nacimiento de la persona a crear,
 	 */
-	public void crearPersona(Persona persona) {
+	public Persona crearPersona() {
 		// Pedimos los datos al usuario para crear el Obj Persona
 		System.out.println("\nIngrese nombre: ");
 		String nombre = leer.nextLine();
@@ -39,9 +39,10 @@ public class ServicioPersona {
 		LocalDate fechaNaciemiento = LocalDate.of(anio, mes, dia);
 
 		// Seteamos los datos
-		persona.setNombre(nombre);
-		persona.setApellido(apellido);
-		persona.setFechaNacimiento(fechaNaciemiento);
+//		persona.setNombre(nombre);
+//		persona.setApellido(apellido);
+//		persona.setFechaNacimiento(fechaNaciemiento);
+		return new Persona(nombre, apellido, fechaNaciemiento);
 	}
 
 	/*

@@ -12,14 +12,10 @@ public class PersonaMain {
 		// instanciamos el servicio
 		ServicioPersona s = new ServicioPersona();
 
-		// instanciamos los objetos Persona
-		Persona p1 = new Persona();
-		Persona p2 = new Persona();
-
-		// Creamos las personas con la llamada al metodo
-		s.crearPersona(p1);
-		s.crearPersona(p2);
-
+		// Creamos las personas con la llamada al metodo del servicio
+		Persona p1 = s.crearPersona();
+		Persona p2 = s.crearPersona();
+		
 		// mostramos los datos de las personas
 		s.mostrarPersona(p1);
 		s.mostrarPersona(p2);
