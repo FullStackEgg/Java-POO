@@ -14,7 +14,7 @@ public class ServicioPersona {
 	private Scanner leer = new Scanner(System.in);
 
 	/*
-	 * Este mÈtodo rellena el objeto mediante un Scanner y le pregunta al usuario el
+	 * Este m√©todo rellena el objeto mediante un Scanner y le pregunta al usuario el
 	 * nombre y la fecha de nacimiento de la persona a crear,
 	 */
 	public Persona crearPersona() {
@@ -26,7 +26,7 @@ public class ServicioPersona {
 		String apellido = leer.nextLine();
 
 		System.out.println("\nIngrese la fecha de nacimiento.");
-		System.out.println("AÒo: ");
+		System.out.println("A√±o: ");
 		int anio = Integer.parseInt(leer.nextLine());
 
 		System.out.println("Mes: ");
@@ -38,15 +38,13 @@ public class ServicioPersona {
 		// Se crea la fecha para pasarla al Objeto Persona
 		LocalDate fechaNaciemiento = LocalDate.of(anio, mes, dia);
 
-		// Seteamos los datos
-//		persona.setNombre(nombre);
-//		persona.setApellido(apellido);
-//		persona.setFechaNacimiento(fechaNaciemiento);
+		// Creamos el objeto directamente en el return
+		// es igual a decir Persona p = new Persona(nombre, apellido, fechaNaciemiento);
 		return new Persona(nombre, apellido, fechaNaciemiento);
 	}
 
 	/*
-	 * Este mÈtodo muestra la persona creada con la llamada al metodo toString del
+	 * Este m√©todo muestra la persona creada con la llamada al metodo toString del
 	 * Obj Persona. Podriamos llamar los valores por un Get pero si el toString ya
 	 * esta construido, esta es una forma mas rapida de obtener los valores
 	 */
@@ -58,7 +56,7 @@ public class ServicioPersona {
 
 	/*
 	 * A partir de la fecha de nacimiento ingresada calculara la edad de la persona.
-	 * Tener en cuenta que para conocer la edad de la persona tambiÈn se debe
+	 * Tener en cuenta que para conocer la edad de la persona tambi√©n se debe
 	 * conocer la fecha actual.
 	 */
 	public int calcularEdad(Persona persona) {
@@ -75,9 +73,9 @@ public class ServicioPersona {
 	}
 
 	/*
-	 * Recibe como par·metro otra edad y retorna true en caso
+	 * Recibe como par√°metro otra edad y retorna true en caso
 	 * de que el receptor tenga menor edad que la persona que se recibe como
-	 * par·metro, o false en caso contrario.
+	 * par√°metro, o false en caso contrario.
 	 */
 	public boolean menorQue(Persona persona, int edad) {
 		boolean esMenor = false; // variable de retorno
