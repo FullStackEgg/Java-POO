@@ -15,18 +15,17 @@ public class ServicioCadena {
 
 	// Crea la cadena ingresada por el usuario
 	// y obtiene su longitud.
-	public void crearCadena(Cadena c) {
+	public Cadena crearCadena() {
 		System.out.println("Ingresa una frase: ");
 		String frase = leer.next();
 
 		int longitudFrase = frase.length();
 
-		c.setFrase(frase);
-		c.setLongitudFrase(longitudFrase);
+		return new Cadena(frase, longitudFrase);
 	}
 
 	/*
-	 * Deber√° contabilizar la cantidad de vocales que tiene
+	 * Deber· contabilizar la cantidad de vocales que tiene
 	 * la frase ingresada.
 	 */
 	public void mostrarVocales(Cadena c) {
@@ -59,7 +58,6 @@ public class ServicioCadena {
 				break;
 
 			default:
-				System.out.println("La frase no contiene niguna vocal.");	
 				break;
 			}
 		}
@@ -73,7 +71,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber√° invertir la frase ingresada y mostrar la frase
+	 * Deber· invertir la frase ingresada y mostrar la frase
 	 * invertida por pantalla.
 	 */
 	public String invertirFrase(Cadena c) {
@@ -87,8 +85,8 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber√° recibir por par√°metro un car√°cter
-	 * ingresado por el usuario y contabilizar cu√°ntas veces se repite el car√°cter
+	 * Deber· recibir por par·metro un car·cter
+	 * ingresado por el usuario y contabilizar cu·ntas veces se repite el car·cter
 	 * en la frase.
 	 */
 	public void vecesRepetido(Cadena c, char letra) {
@@ -106,7 +104,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber√° comparar la longitud de la frase que compone la clase 
+	 * Deber· comparar la longitud de la frase que compone la clase 
 	 * con otra nueva frase ingresada por el usuario.
 	 */
 	public void compararLongitud(Cadena c, String nuevaFrase) {
@@ -119,7 +117,7 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber√° unir la frase contenida en la clase
+	 * Deber· unir la frase contenida en la clase
 	 * Cadena con una nueva frase ingresada por el usuario y mostrar la frase
 	 * resultante.
 	 */
@@ -129,8 +127,8 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * Deber√° reemplazar todas las letras ‚Äúa‚Äù que
-	 * se encuentren en la frase, por alg√∫n otro car√°cter seleccionado por el
+	 * Deber· reemplazar todas las letras ìaî que
+	 * se encuentren en la frase, por alg˙n otro car·cter seleccionado por el
 	 * usuario y mostrar la frase resultante.
 	 */
 	public void reemplazar(Cadena c, String nuevaLetra) {
@@ -139,17 +137,34 @@ public class ServicioCadena {
 	}
 
 	/*
-	 * M√©todo contiene(String letra), deber√° comprobar si la frase contiene una
+	 * MÈtodo contiene(String letra), deber· comprobar si la frase contiene una
 	 * letra que ingresa el usuario y devuelve verdadero si la contiene y falso si
 	 * no.
 	 */
-	public void contiene(Cadena c, String letra) {
-		// Validamos si contiene el caracter ingresado por el usuario
-		if (c.getFrase().contains(letra) == true) {
-			System.out.println("La frase contiene el caracter: [" + letra + "].");
-			System.out.println("Frase: [" + c.getFrase() + "].");
-		} else {
-			System.out.println("La frase no contiene el cracater ingresado.");
+	public boolean contiene(Cadena c, String letra) {
+		boolean resultado = false;
+		char aux_letra;
+		int contador = 0;
+		
+		// Recorremos la frase para comparar caracter por caracter
+		for (int i = 0; i < c.getFrase().length(); i++) {
+			// almacenamos el caracter de la frase
+			aux_letra = c.getFrase().charAt(i); 
+			
+			// Validamos si los cracteres son iguales
+			resultado = letra.contains(String.valueOf(aux_letra));
+			
+			// si resultado es true aumentamos contador
+			if (resultado) {
+				contador++;
+			}
 		}
+		
+		/*
+		 *  si el contador es distinto a cero resultado sera true.
+		 *  Nota: hacemos uso del [ operador ternario ?: ] 
+		 *  resultado = (condicion) ? valor_si : valor_sino;
+		 */
+		return resultado = (contador != 0) ? true : false;
 	}
 }

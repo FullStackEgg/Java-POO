@@ -19,11 +19,9 @@ public class CadenApp {
 		// intanciamos las clases Servicio y Cadena
 		ServicioCadena servicio = new ServicioCadena();
 		
-		Cadena cadena01 = new Cadena();
+		Cadena cadena01 = servicio.crearCadena();
 		
 		// PRUEBA METODOS
-		servicio.crearCadena(cadena01); 
-		
 		servicio.mostrarVocales(cadena01);
 		
 		System.out.println("\nFrase invertidad: [" + servicio.invertirFrase(cadena01)+ "]");
@@ -51,7 +49,13 @@ public class CadenApp {
 		System.out.println("\nIngrese el caracter a buscar en la frase:");
 		String caracter = leer.next();
 		
-		servicio.contiene(cadena01, caracter);
+		// el emtodo contiene, retorna true o false por lo que devolveremos un msj en base al valor del return
+		if (servicio.contiene(cadena01, caracter)) {
+			System.out.println("La frase [" + cadena01.getFrase() + "] contiene el caracter [" + caracter + "]");
+		} else {
+			System.out.println("La frase [" + cadena01.getFrase() + "]  No contiene el caracter ingresado.");
+		}
+			
 		
 		leer.close();
 	}
