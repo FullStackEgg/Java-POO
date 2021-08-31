@@ -158,3 +158,116 @@ Ejemplo de un LinkedHashSet de cadenas:
 ```java
 LinkedHashSet<String> frases = new LinkedHashSet();
 ```
+
+##  :white_medium_small_square: *MAPAS EN JAVA*
+
+Los mapas modelan un objeto a través de una llave y un valor. Esto significa que cada valor
+de nuestro mapa, va a tener una llave única para representar dicho valor. Las llaves de
+nuestro mapa no pueden repetirse, pero los valores sí. Un ejemplo seria una persona que
+tiene su dni/rut (llave única) y como valor puede ser su nombre completo, puede haber dos
+personas con el mismo nombre, pero distinto dni/rut.
+
+* **HashMap** es un mapa implementado a través de una tabla hash, las llaves se almacenan
+utilizando un algoritmo de hash para las llaves y evitar que se repitan.
+Ejemplo de un HashMap de personas:
+
+```java
+HashMap<Integer,String> personas = new HashMap();
+```
+
+* **TreeMap** es un mapa que ordena los elementos de manera ascendente a través de las
+llaves.
+Ejemplo de un TreeMap de personas:
+
+```java
+TreeMap<Integer,String> personas = new TreeMap();
+```
+
+* **LinkedHashMap** es un HashMap que conserva el orden de inserción.
+Ejemplo de un TreeMap de personas:
+
+```java
+LinkedHashMap<Integer,String> personas = new LinkedHashMap();
+```
+
+##  :white_medium_small_square: *AÑADIR UN ELEMENTO A UNA COLECCIÓN*
+
+Las colecciones constan con funciones para realizar distintas operaciones, en este caso si
+queremos añadir un elemento a las listas o sets vamos a tener que utilizar la función add(T),
+pero para los mapas vamos a utilizar la función put(llave,valor).
+
+**Listas:**
+```java
+ArrayList<Integer> numeros = new ArrayList();
+int num = 20;
+numeros.add(num);
+```
+
+**Conjuntos:**
+```java
+HashSet<Integer> numeros = new HashSet();
+int num = 20;
+numeros.add(20);
+```
+
+**Mapas:**
+```java
+HashMap<Integer, String> alumnos = new HashMap();
+int dni = 34576189;
+String nombreAlumno = “Pepe”
+alumnos.put(dni, nombreAlumno);
+```
+
+##  :white_medium_small_square: *RECORRER UNA COLECCIÓN*
+Si quisiéramos mostrar todos los elementos que le hemos agregado y que componen
+nuestra colección vamos a tener que recorrerla.
+Para recorrer una colección, vamos a tener que utilizar el bucle forEach. 
+```java
+for ( Tipo de dato variable : Colección){
+}
+```
+El bucle comienza con la palabra clave for al igual que un bucle for normal. En lugar de declarar e inicializar
+una variable contador del bucle, declara una variable vacia que es del mismo tipo que la
+colección, seguido de dos puntos y seguido del nombre de la colección. La variable recibe
+en cada iteración un elemento de la colección, de esa manera si nosotros mostramos esa
+variable, podemos mostrar todos los elementos de nuestra colección.
+
+**Listas:**
+```java
+ArrayList<String> lista = new ArrayList();
+
+for (String cadena : lista) {
+    System.out.println(cadena); // mostramos los elementos a traves de la variable
+}
+```
+
+**Conjuntos:**
+```java
+HashSet<Integer> numerosSet = new HashSet();
+
+for (Integer numero : numerosSet) {
+    System.out.println(numero); // mostramos los elementos a traves de la variable
+}
+```
+
+**Mapas:**
+```java
+HashMap<Integer, String> estudiantes = new HashMap();
+
+// Recorrer las dos partes del mapa
+for (Map.Entry<Integer, String> entry : estudiantes.entrySet()) {
+    System.out.println("documento=" + entry.getKey() + ", nombre=" +
+                        entry.getValue());
+    // entry.getKey trae la llave y entry.getValue trae los valores del mapa
+}
+
+// Mostrar solo las llaves
+for (Integer dni : estudiantes.keySet()) {
+    System.out.println("Documento = " + dni);
+}
+
+// Mostrar solo los valores
+for (String nombres : estudiantes.values()) {
+    System.out.println("Nombre: " + nombres);
+}
+```
