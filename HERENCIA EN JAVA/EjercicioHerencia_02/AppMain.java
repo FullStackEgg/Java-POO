@@ -10,13 +10,13 @@ public class AppMain {
 
 	public static void main(String[] args) {
 
-//		Lavadora lavadora_01 = new Lavadora();
-//		
-//		lavadora_01.crearLavadora();
-//		
-//		System.out.println(lavadora_01.toString());
-//		
-//		System.out.println("El precio final de la lavadora es: " + lavadora_01.precioFinal());
+		Lavadora lavadora_01 = new Lavadora();
+		
+		lavadora_01.crearLavadora();
+		
+		System.out.println(lavadora_01.toString());
+		
+		System.out.println("El precio final de la lavadora es: " + lavadora_01.precioFinal());
 		
 		Televisor televisor_01 = new Televisor();
 		
