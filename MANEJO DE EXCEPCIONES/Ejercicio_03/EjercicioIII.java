@@ -1,13 +1,13 @@
 /**
- * Defina una clase llamada DivisionNumero. En el método main utilice un Scanner
- * para leer dos números en forma de cadena. A continuación, utilice el método
+ * Defina una clase llamada DivisionNumero. En el mÃ©todo main utilice un Scanner
+ * para leer dos nÃºmeros en forma de cadena. A continuaciÃ³n, utilice el mÃ©todo
  * parseInt() de la clase Integer, para convertir las cadenas al tipo int y guardarlas en
- * dos variables de tipo int. Por ultimo realizar una división con los dos numeros y
+ * dos variables de tipo int. Por ultimo realizar una divisiÃ³n con los dos numeros y
  * mostrar el resultado.
  * Todas estas operaciones puede tirar excepciones a manejar, el ingreso por
- * teclado puede causar una excepción de tipo InputMismatchException, el método
+ * teclado puede causar una excepciÃ³n de tipo InputMismatchException, el mÃ©todo
  * Integer.parseInt() si la cadena no puede convertirse a entero, arroja una
- * NumberFormatException y además, al dividir un número por cero surge una
+ * NumberFormatException y ademÃ¡s, al dividir un nÃºmero por cero surge una
  * ArithmeticException. Manipule todas las posibles excepciones utilizando bloques
  * try/catch para las distintas excepciones
  */
@@ -32,17 +32,20 @@ public class EjercicioIII {
 		try {
 			System.out.println("Ingrese dos numeros para dividir:");
 			System.out.print("\nNum1 = ");
-			num1 = sc.nextInt();
-			
+			num1 = Integer.parseInt(sc.nextLine());
+
 			System.out.print("\nNum2 = ");
 			num2 = Integer.parseInt(sc.nextLine());
-			
-			DivisionNumero.division(num1, num2);
-			
-		}catch (NumberFormatException e) {
+
+			try {
+				// Llamada al metodo
+				System.out.println(DivisionNumero.division(num1, num2));
+			} catch (ArithmeticException e) {
+				System.out.println("Error en la llamada del metodo division... " + e);
+			}
+
+		} catch (NumberFormatException e) {
 			System.out.println("Error en el ingreso de datos... " + e);
-		} catch (ArithmeticException e) {
-			System.out.println("Error en la llamada del metodo division... " + e);
 		}
 		
 	}
