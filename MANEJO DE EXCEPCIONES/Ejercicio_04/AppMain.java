@@ -24,39 +24,33 @@ public class AppMain {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in).useDelimiter("\n");
-		
-		boolean validar = false; // condicional del bucle do/while
-		int intentos = 1; 
+
+		boolean bandera = false; // condicion del bucle
+		int intentos = 0;
 		int numIngresado;
-		int numAdivinar = AdivinarNumeroApp.numeroAleatorio(); // Generamos el numero aleatorio
-		
+		int numAdivinar = AdivinarNumeroApp.numeroAleatorio(); // Generamos el numero aleatorio entre 1 y 500
+
 		System.out.println("Intente Adivinar el numero aleatorio:");
-		
+
 		do {
+			intentos++;
 			
 			try {
 				System.out.println("ingrese un numero:");
 				numIngresado = Integer.parseInt(sc.nextLine());
-				
-				if (numIngresado < numAdivinar) {
-					System.out.println("El numero a adinivar es mayor al valor ingresado..");
-					intentos++;
-				} else if (numIngresado > numAdivinar) {
-					System.out.println("El numero a adinivar es menor al valor ingresado..");
-					intentos++;
-				} else {
-					System.out.println("Numero Adivinado!!! era el : " + numAdivinar);
-					System.out.println("Total de intentos: " + intentos);
-					validar = true; // Salimos del bucle
+
+				if (AdivinarNumeroApp.validarNumero(numIngresado, numAdivinar)) {
+					// si es true cortamos bucle
+					bandera = true;
 				}
-				
+
 			} catch (NumberFormatException e) {
 				System.out.println("Error en el ingreso de datos... " + e);
-				
 			}
-			
-		} while (validar == false);
 
+		} while (bandera == false);
+
+		System.out.println("Total de intentos: " + intentos);
 	}
 
 }
