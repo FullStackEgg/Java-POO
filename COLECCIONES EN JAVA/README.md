@@ -176,3 +176,72 @@ for (String nombres : estudiantes.values()) {
     System.out.println("Nombre: " + nombres);
 }
 ```
+##  :white_medium_small_square: *ITERATOR*
+El Iterator es una interfaz que pertenece al framework de colecciones. Este, nos permite
+recorrer, acceder a la información y eliminar algún elemento de una colección. Ya que,
+cuando queremos eliminar algún elemento, mediante el for each, nos va a tirar un error.
+Gracias a que el Iterator es parte de el framework de colecciones, todas las colecciones
+vienen con un metodo iterator(), este devuelve un iterador para recorrer esa colección,
+este iterador que devuelve la colección, lo recibe el objeto iterator y nos deja iterar sobre
+nuestra colección.
+
+Para poder usar el Iterator es importante crear el objeto de tipo Iterator, con el mismo tipo
+de dato que nuestra colección.
+
+El iterator contiene tres metodos muy utiles para lograr esto:
+* **boolean hasNext():** Retorna verdadero si al iterator le quedan elementos por
+iterar.
+
+* **Object next():** Devuelve el siguiente elemento en la coleccion, mientras le
+metodo hasNext() retorne true. Este metodo es el que nos sirve para mostrar el
+elemento.
+
+* **void remove():** Elimina el elemento actual de la colección.
+
+**Ejemplo:**
+```java
+    ArrayList<String> lista = new ArrayList<String>();
+    lista.add("A");
+    lista.add("B");
+    
+    // Iterator para recorrer la lista
+    Iterator iterator = lista.iterator(); // Devolvemos el iterador
+    System.out.println("Elementos de la lista : ");
+    
+    // Usamos un while para recorrer la lista, siempre que el hasnext() devuelva true.
+    while (iterator.hasNext()) {
+        // Mostramos los elementos con el iterator.next()
+        System.out.print(iterator.next() + " ");
+        System.out.println();
+    }
+```
+
+##  :white_medium_small_square: *ELIMINAR UN ELEMENTO DE UNA COLECCIÓN*
+Como pudimos ver más arriba para eliminar un elemento de una colección vamos a tener
+que utilizar la funcion remove() del Iterator, esto se aplica para el resto de nuestras
+colecciones. Para los mapas, vamos a utilizar el Map. Entry para usar con el iterator.
+Ademas, podemos eligir sobre si queremos preguntar por la llave o por el valor, para
+validar que elemento eliminar.
+
+**Conjuntos:**
+```java
+    HashSet<Integer> numerosSet = new HashSet();
+    Iterator<Integer> it = hashEnteros.iterator();
+    
+    while (it.hasNext()) {
+        if (it.next() == 3) { // Borramos si está el numero 3
+            it.remove();
+        }
+    }
+```
+
+**Mapas:**
+Con los mapas vamos a tener que usar el remove propio de los Mapas pero no podemos
+recorrerlos, este remove, solo sirve para eliminar elementos del mapa según su llave.
+```java
+    HashMap<Integer, String> estudiantes = new HashMap();
+    Int llaveABorrar = 123;
+    
+    estudiantes.remove(llaveABorrar)
+}
+```
