@@ -245,3 +245,44 @@ recorrerlos, este remove, solo sirve para eliminar elementos del mapa según su 
     estudiantes.remove(llaveABorrar)
 }
 ```
+##  :white_medium_small_square: *ORDENAR UNA COLECCIÓN*
+Los elementos, que vamos agregando a nuestra colección se van mostrar según se fueron
+agregando y nosotros capaz necesitemos mostrar o tener todos los elementos ordenados.
+Para ordenar una colección, vamos a tener que utilizar la función
+**```Collections.sort(coleccion)```** La función recibe la colección y la ordena para después poder
+mostrarla ordenada de manera ascendente.
+
+Algunas colecciones, como los conjuntos o los mapas no pueden utilizar el sort(). Ya que
+por ejemplo los HashSet, manejan valores Hash y el sort() no sabe ordenar por hash, si no
+por elementos. Por otro lado, los mapas al tener dos datos, el sort() no sabe por cual de sos
+datos ordenar.
+
+Entonces, para ordenar los conjuntos, deberemos convertirlos a listas para poder ordenar
+esa lista por sus elementos. Y a la hora de ordenar un mapa como tenemos dos datos para
+ordenar, vamos a convertir el **HashMap** a un **TreeMap**.
+
+**Nota:** recordemos que los TreeSet y TreeMap se ordenan por si mismos.
+
+**Listas:**
+```java
+    ArrayList<Integer> numeros = new ArrayList();
+    
+    Collections.sort(numeros);
+```
+
+**Conjuntos:**
+```java
+    HashSet<Integer> numerosSet = new HashSet();
+    
+    ArrayList<Integer> numerosLista = new ArrayList(numerosSet); // Se convierte el HashSet a Lista.
+    
+    Collections.sort(numerosLista);
+```
+
+**Mapas:**
+```java
+    HashMap<Integer, String> alumnos = new HashMap();
+    
+    // Se convierte el HashMap a TreeMap
+    TreeMap<Integer, String> alumnosTree = new TreeMap(alumnos);
+```
