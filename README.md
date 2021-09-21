@@ -86,6 +86,29 @@ El método o atributo de una clase padre se podrá acceder desde las clases hija
 
 :rotating_light: Lo más normal es que los atributos sean privados para que no sean modificados directamente desde fuera, además se suelen usar los métodos get and set para modificar y mostrar el valor de atributos.
 
+## :white_medium_small_square: *ATRIBUTOS Y METODOS ESTÁTICOS*
+Un atributo o un método de una clase se puede modificar con la palabra reservada static
+para indicar que este atributo o método no pertenece a las instancias de la clase si no a la
+propia clase.
+Se dice que son atributos de clase si se usa la palabra clave static: en ese caso la variable es
+única para todas las instancias (objetos) de la clase (ocupa un único lugar en memoria), es
+decir que, si se poseen múltiples instancias de una clase, cada una de ellas no tendrán una
+copia propia de este atributo, si no que todas estas instancias compartirán una misma copia
+del atributo. A veces a las variables de clase se les llama variables estáticas. Si no se usa
+static, el sistema crea un lugar nuevo para esa variable con cada instancia (la variable es
+diferente para cada objeto).
+En el caso de una constante no tiene sentido crear un nuevo lugar de memoria por cada
+objeto de una clase que se cree. Por ello es adecuado el uso de la palabra clave static.
+Cuando usamos “static final” se dice que creamos una constante de clase, un atributo común
+a todos los objetos de esa clase.
+
+Ejemplo: 
+```java
+Public class Cuenta {
+       private static String saldo;
+}
+```
+
 ## :white_medium_small_square: *SOBRECARGA DE METODOS Y CONSTRUCTORES EN JAVA*
 La sobrecarga de métodos significa tener varios métodos con el mismo nombre pero con distintos parámetros. 
 Si has probado alguna de las clases de Java, habrás visto que un mismo método esta repetido pero con distinto parámetros.
