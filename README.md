@@ -109,6 +109,24 @@ Public class Cuenta {
 }
 ```
 
+## :white_medium_small_square: *ATRIBUTOS FINALES*
+En este contexto indica que una variable es de tipo constante: no admitirá cambios después
+de su declaración y asignación de valor. La palabra reservada final determina que un atributo
+no puede ser sobrescrito o redefinido, es decir, no funcionará como una variable
+“tradicional”, sino como una constante. Toda constante declarada con final ha de ser
+inicializada en el mismo momento de declararla. El modificador final también se usa como
+palabra clave en otro contexto: una clase final es aquella que no puede tener clases que la
+hereden.
+Cuando se declaran constantes es muy frecuente que los programadores usen letras
+mayúsculas (como práctica habitual que permite una mayor claridad en el código), aunque
+no es obligatorio.
+Ejemplo: 
+```java
+Public class Perro {
+       private final int EDAD;
+}
+```
+
 ## :white_medium_small_square: *SOBRECARGA DE METODOS Y CONSTRUCTORES EN JAVA*
 La sobrecarga de métodos significa tener varios métodos con el mismo nombre pero con distintos parámetros. 
 Si has probado alguna de las clases de Java, habrás visto que un mismo método esta repetido pero con distinto parámetros.
